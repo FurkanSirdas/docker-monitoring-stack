@@ -1,5 +1,10 @@
 # Docker Monitoring Stack
 
+![Docker](https://img.shields.io/badge/Docker-Compose-blue)
+![Prometheus](https://img.shields.io/badge/Prometheus-Monitoring-orange)
+![Grafana](https://img.shields.io/badge/Grafana-Dashboard-F46800)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-Server-E95420)
+
 ## Overview
 
 This project demonstrates a complete monitoring solution deployed on an Ubuntu Server virtual machine running in VirtualBox.
@@ -127,6 +132,70 @@ During this project I gained hands-on experience with:
 * Alert rule configuration
 * SMTP email integration
 * Infrastructure troubleshooting
+
+## Grafana Monitoring Dashboard
+
+![Grafana Dashboard](screenshots/grafana-dashboard.png)
+
+Real-time monitoring dashboard built with Grafana and Prometheus.
+
+The dashboard visualizes critical Ubuntu Server metrics including:
+
+- CPU Usage
+- Memory Usage
+- Disk Usage
+- Network Traffic
+- System Load
+- Uptime
+
+---
+
+## Container Monitoring Dashboard
+
+![cAdvisor Dashboard](screenshots/cadvisor-dashboard.png)
+
+Container-level monitoring dashboard powered by cAdvisor and Grafana.
+
+The dashboard tracks resource consumption of running Docker containers including:
+
+- CPU Usage
+- Memory Usage
+- Network Receive
+- Network Transmit
+
+---
+
+## Alerting System
+
+![CPU Alert](screenshots/cpu-alert.png)
+
+A Grafana-managed alert rule was configured to monitor CPU utilization collected from Prometheus.
+
+Alert configuration:
+
+- Metric Source: Prometheus
+- Threshold: CPU Usage > 80%
+- Evaluation Interval: 1 Minute
+- Notification Channel: Email (SMTP)
+
+When the CPU usage exceeds the configured threshold, Grafana automatically triggers an alert and sends an email notification.
+
+
+## Email Notification
+
+![Email Alert](screenshots/email-alert.png)
+
+Grafana was configured with SMTP email notifications.
+
+When CPU usage exceeds the configured threshold, Grafana automatically sends an email alert containing:
+
+- Alert status
+- Metric values
+- Alert labels
+- Triggered threshold
+- Direct link to the alert
+
+This allows administrators to react quickly to system issues without constantly monitoring the dashboard.
 
 ## Author
 
