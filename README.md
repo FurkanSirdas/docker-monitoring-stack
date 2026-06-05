@@ -180,6 +180,7 @@ Alert configuration:
 
 When the CPU usage exceeds the configured threshold, Grafana automatically triggers an alert and sends an email notification.
 
+---
 
 ## Email Notification
 
